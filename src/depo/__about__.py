@@ -9,7 +9,7 @@ __all__ = [
     "__email__", "__license__", "__copyright__","__requirements__"
 ]
 
-__requirements__ = ["asgiref","Django","django-js-asset","django-mptt","django-mysql","mysqlclient","pytz","sqlparse"]
+__requirements__ = ["Django","mysqlclient","django_treebeard"]
 __title__ = "depo"
 __summary__ = "Depo is a cross platform provisioning and operations platform includeing a CMDB and plugins that provide specific functionality"
 __uri__ = "https://git01.pfsfhq.com/Operations/NetDM/homepage/"
