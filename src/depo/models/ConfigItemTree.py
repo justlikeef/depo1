@@ -17,3 +17,6 @@ class ConfigItemTree(MP_Node):
 
     def __str__(self):
         return self.name
+        
+    def getTreeNodeType(self):
+        return "Folder"
