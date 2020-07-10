@@ -19,7 +19,7 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('jstree/', include('django_jstree.urls')),
+    path('', include('django_jstree.urls')),
     path('admin/', admin.site.urls),
     path('', views.index)
 ]
