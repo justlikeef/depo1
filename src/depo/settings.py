@@ -19,8 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# noinspection SpellCheckingInspection
 SECRET_KEY = 'o_$z@fqof4o@)gv(&5i5-aia7@pt59ga2vm0#n+)0uq+adot&+'
 
+# noinspection SpellCheckingInspection
 FERNET_KEYS = [
     '9uv8yt29pt=yuy)*Y9pGSAfghv(&5i5-aia7@pt59gbkSDGBF89y23+ado'
 ]
@@ -31,24 +33,35 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
+SHARED_APPS = (
+    'django_tenants',  # mandatory, should always be before any django app
+    'depo_core',      # you must list the app where your tenant model resides in
 
-INSTALLED_APPS = [
-    'depo',
-    'django_jstree',
-    'depo_credentials',
     'django_unmaskpasswordinput',
     'treebeard',
-    'django.contrib.admin',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
+    'django.contrib.admin',
+    'django.contrib.staticfiles'
+)
+
+TENANT_APPS = (
+    'django.contrib.contenttypes',
+    'django.contrib.auth',
+
+    # your tenant-specific apps
+    'depo_cmdb',
+    'django_jstree'
+)
+
+INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
 
 FORM_RENDERER = 'django.forms.renderers.DjangoTemplates'
 
 MIDDLEWARE = [
+    'django_tenants.middleware.main.TenantMainMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,7 +76,7 @@ ROOT_URLCONF = 'depo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['depo/templates','treebeard/templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,24 +89,27 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'depo.wsgi.application'
+WSGI_APPLICATION = '.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
+    #    'default': {
+    #        'ENGINE': 'django.db.backends.sqlite3',
+    #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #    }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django_tenants.postgresql_backend',
         'NAME': 'depo',
         'USER': 'depo',
         'PASSWORD': '.3qu1pm3ntL1st.'
     }
 }
 
+DATABASE_ROUTERS = (
+    'django_tenants.routers.TenantSyncRouter',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -113,7 +129,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -127,9 +142,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/static')
+
+TENANT_MODEL = "depo_core.Tenant"  # app.Model
+TENANT_DOMAIN_MODEL = "depo_core.Domain"  # app.Model
