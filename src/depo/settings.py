@@ -108,7 +108,7 @@ DATABASES = {
 }
 
 DATABASE_ROUTERS = (
-    'django_tenants.routers.TenantSyncRouter',
+    'django_tenants.routers.TenantSyncRouter'
 )
 
 # Password validation

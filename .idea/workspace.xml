@@ -18,19 +18,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/depo_cmdb" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../skeleton/skeleton/settings.py" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo" />
+      <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo_core" />
+      <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo_cmdb" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo_cmdb" />
       <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo_cmdb\views" />
       <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo_cmdb\models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo_cmdb" />
-      <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo_core" />
-      <recent name="C:\Users\AP879\Documents\GitHub\depo\src\depo" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -44,22 +44,31 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/src/depo/tenant" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="395" y="111" key="#Inspections" timestamp="1597726561930">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="395" y="111" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1597726561930" />
+    <state x="449" y="168" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1599105745820">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="449" y="168" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1599105745820" />
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598101991355">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1598101991355" />
-    <state x="237" y="188" key="FileChooserDialogImpl" timestamp="1598103182819">
+    <state x="237" y="188" key="FileChooserDialogImpl" timestamp="1599107109674">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="237" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1598103182819" />
-    <state x="277" y="77" key="SettingsEditor" timestamp="1598100608464">
+    <state x="237" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1599107109674" />
+    <state x="277" y="77" key="SettingsEditor" timestamp="1599105739238">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1598100608464" />
+    <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1599105739238" />
   </component>
 </project>
